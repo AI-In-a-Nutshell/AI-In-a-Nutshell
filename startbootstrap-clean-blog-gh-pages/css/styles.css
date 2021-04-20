@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'poppins',sans-serif ;
+}
+.wrapper{
+    height: 50px;
+    padding: 7px;
+    
+}
+html,body{
+
+
+}
+
+.wrapper .button{
+    display: inline-block;
+    float:left;
+    margin: 0 5px;
+    background:transparent;
+    height: 30px;
+    width: 30px;
+    border-radius: 5000px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out ;
+
+}
+
+.wrapper .button .icon{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 30px
+}
+
+
+
+.wrapper .button .icon i{
+    font-size: 25px;
+    line-height: 30px;
+    color: black;
+}
+
+.wrapper .button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.wrapper .button:hover{
+    width: 200px;
+}
+.form_1{
+    float: right;
+    margin-right: 50px;
+    margin-top: 0px;
+    position: relative;
+    float: right;
+    position: unset;
+    padding-top: 0%;
+}
+    
+.inp_1{
+    border-radius: 50px 15px;
+    padding: 3px;
+    margin-top: 3px;
+    background-color: transparent;
+}
+
+.inp_1:focus{
+    outline: none;
+}
+
+.button_1{
+     border-radius: 50px 15px;
+     color: #ffffff;
+     background-color: black;
+     padding: 3px;
+     width: 50px;
+     
+}
+
+
+
+.wrapper h1{
+    display:block;
+    margin: 610px;
+    position: absolute;
+    margin-top: 0px;
+}
+
+
+
