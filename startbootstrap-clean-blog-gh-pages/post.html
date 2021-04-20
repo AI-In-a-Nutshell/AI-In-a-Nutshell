@@ -161,9 +161,9 @@
           <br>= 1 – (3/4)2 – (1/4)2
           <br>= 0.444</b></p>
           <h4>• Weighted Sum of Gini Impurity for Camera feature :</h4>
-          <p>G(Camera) = (n * (Cam 1) )/m * G(cam 1) + (n * (Cam 2) )/m * G(cam 2) + <br>(n * (Cam 3) )/m * G(cam 3) + (n * (Cam 4) )/m *
+          <p><b>G(Camera) = (n * (Cam 1) )/m * G(cam 1) + (n * (Cam 2) )/m * G(cam 2) + <br>(n * (Cam 3) )/m * G(cam 3) + (n * (Cam 4) )/m *
           (cam 4)
-          <br>= (0.2857 * 0.375) + (0.2142 * 0.444) +(0.2142 * 0.444 )+ (0.2857 * 0.375 )<br>=0.4044</p>
+          <br>= (0.2857 * 0.375) + (0.2142 * 0.444) +(0.2142 * 0.444 )+ (0.2857 * 0.375 )<br>=0.4044</b></p>
           <p>Therefore, Gini Impurity of camera feature = 0.4044</p>
           <h4>• Gini Impurity of Gender Feature :</h4>
           <p>Now let us calculate Gini Impurity of the feature Gender.
@@ -171,16 +171,16 @@
           <img src="img/gini tabel2.png" alt="">
           <p>Since the gender feature has 2 unique values, therefore we can calculate Gini for each type of value and further
           calculate a weighted Avg as the Gini impurity of gender feature</p>
-          <p>G(MALE) = 1 – P(YES)]2 - [P(NO)]2
+          <center><p><b>G(MALE) = 1 – P(YES)]2 - [P(NO)]2
           = 1 – (3/7)2 – (4/7)2
           = 0.489
           G(FEMALE) = 1 – P(YES)]2 - [P(NO)]2
           = 1 – (5/7)2 – (4/7)2
-          = 0.408</p>
+          = 0.408</b></p></center>
           <h4>• Weighted Sum of Gini Impurity for Gender feature :</h4>
-          <p>G(Gender) = (n * (Male) )/m * G(Male) + (n * (Female) )/m * G(Female)
+          <p><b>G(Gender) = (n * (Male) )/m * G(Male) + (n * (Female) )/m * G(Female)
           = (0.5 * 0.49) + (0.5 * 0.408)
-          = 0.449</p>
+          = 0.449</b></p>
           <p>Therefore, Gini Impurity of gender feature = 0.449</p>
           <p>On comparing we find Gini(Camera) < Gini(Gender), therefore Camera is selected as the root node</p>
           <p><b>Now, Let us find the root node by calculating Entropy:</b></p>
@@ -202,21 +202,21 @@
           = - [-0.158 – 0.115]
           = 0.275</b></p>
           <p>Similarly we can calculate, E(Cam 3) = 0.275 and E(Cam 4) = 0.240 <br> Weighted Sum of Entropy for Camera feature :</p>
-          <p>E(G) = 4/14 * (0.240) + 3/14 * (0.275) + 3/14 * (0.275) + 4/14 * (0.240) = 0.252</p>
+          <p><b>E(G) = 4/14 * (0.240) + 3/14 * (0.275) + 3/14 * (0.275) + 4/14 * (0.240) = 0.252<b></p>
           <p>So, Entropy of camera feature = 0.252 <br>
           
           Therefore, Information Gain for Camera : = 0.985 – 0.252 = 0.733</p>
           <p>Since the gender feature has 2 unique values, therefore we can calculate Gini for each type of value and further
           calculate a weighted Avg as the Entropy of gender feature</p>
           <h4>Entropy of Gender :</h4>
-          <p>E(Male ) = - 3/7*log(3/7) - 4/7*log(4/7)
+          <p><b>E(Male ) = - 3/7*log(3/7) - 4/7*log(4/7)
           = -[0.428 * (-0.367) + 0.571* (-0.243)]
           = - [-0.157 – 0.138]
           = 0.295
           
           E(Female ) = - 5/7*log(5/7) - 2/7*log(2/7)
           = - [-0.104 – 0.155]
-          = 0.295</p>
+          = 0.295</b> </p>
           <h4>Weighted Sum of Entropy for Camera feature :</h4>
           <p>E(Gender) = 7/14 * (0.295) + 7/14 * (0.259)
           = 0.5*(0.295) + 0.5*(0.259)
@@ -229,7 +229,82 @@
           <img style="padding-left: 6rem;" src="img/dtree final root tree.png" alt="">
         </div>
       </div>
+      <div>
+    <h3> Code Implementation</h3>
+    <pre>
+    <code>
+
+    # Imprting the necessary libraries
+
+    <div  class=" jumbotron">
+    import pandas as pd
+    import numpy as np
+    import seaborn as sns
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #loading the Iris dataset using seaborn
+    df = sns.load_dataset('iris')
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #mapping the target/label values
+    df['species']=df['species'].map({'setosa':0,'versicolor':1,'virginica':2})
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #seperating the feature and label dataframes
+    X=df.drop(['species'],axis=1)
+    y=df['species']
+    <hr style= "height:2px;color:gray;background-color:gray">
+    from sklearn.model_selection import train_test_split
+    <hr style= "height:2px;color:gray;background-color:gray">
+    X_train,X_test,y_train,y_test=train_test_split(X,y, test_size=0.2,random_state=0)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #importing Decision Tree
+    from sklearn.tree import DecisionTreeClassifier
+    <hr style= "height:2px;color:gray;background-color:gray">
+    clf = DecisionTreeClassifier()
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #fitting the classifier
+    clf.fit(X_train,y_train)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #storing the predictions in y_pred
+    y_pred = clf.predict(X_test)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #importing metrices
+    from sklearn.metrics import  classification_report, accuracy_score, confusion_matrix
+    <hr style= "height:2px;color:gray;background-color:gray">
+    accuracy_score(y_test,y_pred)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    print(confusion_matrix(y_test,y_pred))
+    <hr style= "height:2px;color:gray;background-color:gray">
+    print(classification_report(y_test,y_pred))
+    <hr style= "height:2px;color:gray;background-color:gray">
+    from sklearn.model_selection import GridSearchCV
+    <hr style= "height:2px;color:gray;background-color:gray">
+    param_grid = {
+    'n_estimators': [40,50,100, 200, 300, 500],
+    'learning_rate' : [0.0001, 0.001, 0.01, 0.1, 1.0],
+    }
+    <hr style= "height:2px;color:gray;background-color:gray">
+    xgclf = XGBClassifier()
+    grid_search = GridSearchCV(estimator = xgclf, param_grid = param_grid, 
+                              cv = 3, n_jobs = -1, verbose = 2)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    grid_search.fit(X_train,y_train)
+    <hr style= "height:2px;color:gray;background-color:gray">
+    #est parameters 
+    grid_search.best_params_
+    <hr style= "height:2px;color:gray;background-color:gray">
     </div>
+    
+
+    
+
+    
+
+
+    </code>
+    </pre>
+    </div>
+    </div>
+
+    
   </article>
 
   <hr>
