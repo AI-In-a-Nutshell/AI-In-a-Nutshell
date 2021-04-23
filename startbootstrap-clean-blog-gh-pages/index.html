@@ -39,7 +39,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">AI In a Nutshell</a>
+        <div style="height:10 width:10"><a class="navbar-brand" href="index.html"><img src="img/logo.png" height="100" width="200" ></div></a>
         <button
           class="navbar-toggler navbar-toggler-right"
           type="button"
@@ -61,7 +61,16 @@
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Sample Post</a>
+              <div class="dropdown">
+  <button class="btn btn btn-outline-light  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    All Blogs
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -72,7 +81,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/pexels-markus-spiske-97987.jpg')">
+    <header class="masthead" style="background-image: url('img/wall2.jpeg') ">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -91,21 +100,23 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
-            <a href="post.html">
+            <a href="decision_tree.html">
               <h2 class="post-title">Decision Tree Implementation.</h2>
               <h3 class="post-subtitle">
                 Full Implementation With code.
               </h3>
             </a>
+            <a href="random_forest.html">
+              <h2 class="post-title">Random Forest Implementation.</h2>
+              <h3 class="post-subtitle">
+                Full Implementation With code.
+              </h3>
+            </a>
           </div>
-          <hr />
+          
           
           <!-- Pager -->
-          <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#"
-              >Older Posts &rarr;</a
-            >
-          </div>
+          
         </div>
       </div>
     </div>
@@ -118,15 +129,12 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center " >
-              <div class="wrapper" style="padding-left: 255px;">
+              <div class="wrapper" style="padding-left: 17.5rem;">
                 <div class="button">
                   <div class="icon"><i class="fab fa-facebook-f"></i></div>
                   <span>Facebook</span>
                 </div>
-                <div class="button">
-                  <div class="icon"><i class="fab fa-twitter"></i></div>
-                  <span>Twitter</span>
-                </div>
+                
                 <div class="button">
                   <div class="icon"><a href="https://www.linkedin.com/in/shivesh-narain-478003168/"><i
                         class="fab fa-instagram"></i></a></div>
@@ -142,9 +150,9 @@
                 </div>
                 <div>
             </ul>
-            <p class="copyright text-muted">
-              Copyright &copy; Your Website 2020
-            </p>
+            <center><p>Made with <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+</svg> in India </p></center>
           </div>
         </div>
       </div>
